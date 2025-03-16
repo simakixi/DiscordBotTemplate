@@ -32,7 +32,7 @@ client.once('ready', async () => {
   
     try {
         await rest.put( //applicationCommandsエンドポイントを使用してコマンドを登録
-            Routes.applicationCommands(process.env.clientId),
+            Routes.applicationCommands(process.env.ClientID),
             { body: commands },
         );
     } catch (error) {
