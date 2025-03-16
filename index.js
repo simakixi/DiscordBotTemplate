@@ -13,12 +13,12 @@ client.commands = new Map();
 
 //コマンドを保存するための配列
 const commands = [];
-//./commandsディレクトリ内の全ての.jsファイルを読み込み、それをcommandFilesに格納
-const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
+//./Commandディレクトリ内の全ての.jsファイルを読み込み、それをcommandFilesに格納
+const commandFiles = fs.readdirSync('./Command').filter(file => file.endsWith('.js'));
 
 for (const file of commandFiles) {
     //ファイルをモジュールとして読み込む
-    const command = require(`./commands/${file}`);
+    const command = require(`./Command/${file}`);
     //コマンドの名前をキー、コマンドオブジェクトを値としてclient.commandsに格納
     client.commands.set(command.data.name, command);
     //コマンドデータをcommand配列に追加
